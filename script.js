@@ -1,12 +1,17 @@
 // ===== Current year =====
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ===== Scroll state + progress =====
+// ===== Nav scroll state + scroll progress =====
+const nav = document.getElementById("nav");
 const progress = document.getElementById("scrollProgress");
+
 function onScroll() {
   const scrollTop = window.scrollY;
+  nav.classList.toggle("scrolled", scrollTop > 40);
+
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + "%";
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progress.style.width = pct + "%";
 }
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
@@ -14,6 +19,7 @@ onScroll();
 // ===== Mobile menu =====
 const toggle = document.getElementById("navToggle");
 const links = document.getElementById("navLinks");
+
 toggle.addEventListener("click", () => {
   const open = links.classList.toggle("open");
   toggle.classList.toggle("open", open);
@@ -35,28 +41,41 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
 );
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-// ===== Typed command loop in hero =====
-const commands = [
-  "kubectl get pods -n onesoc --field-selector=status.phase=Running",
-  "systemctl status backend.service   # active (running) ✓",
-  "curl -s /api/experience | jq '.[].role'",
-  "grep -R 'reliability' ./services --count",
-  "docker build -t likhitha/portfolio:latest .",
+// ===== Typing effect =====
+const phrases = [
+  "Full-Stack Engineer @ Microsoft",
+  "Front-End → API → Database",
+  "React · Node · FastAPI",
+  "I build the whole stack",
 ];
-const el = document.getElementById("typedCmd");
-let ci = 0, chi = 0, deleting = false;
+const typedEl = document.getElementById("typed");
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-function typeCmd() {
-  const cur = commands[ci];
-  chi += deleting ? -1 : 1;
-  el.textContent = cur.slice(0, chi);
-  let delay = deleting ? 30 : 55;
-  if (!deleting && chi === cur.length) { delay = 1900; deleting = true; }
-  else if (deleting && chi === 0) { deleting = false; ci = (ci + 1) % commands.length; delay = 300; }
-  setTimeout(typeCmd, delay);
+function type() {
+  const current = phrases[phraseIndex];
+  if (deleting) {
+    charIndex--;
+  } else {
+    charIndex++;
+  }
+  typedEl.textContent = current.slice(0, charIndex);
+
+  let delay = deleting ? 45 : 90;
+
+  if (!deleting && charIndex === current.length) {
+    delay = 1800;
+    deleting = true;
+  } else if (deleting && charIndex === 0) {
+    deleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    delay = 350;
+  }
+  setTimeout(type, delay);
 }
-typeCmd();
+type();

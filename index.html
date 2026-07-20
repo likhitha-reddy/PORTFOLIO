@@ -3,310 +3,352 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="G Sai Likhitha Reddy — Backend & Cloud Software Developer at Microsoft. APIs, Kubernetes, distributed systems, observability." />
-  <title>likhitha@microsoft:~$ portfolio</title>
+  <meta name="description" content="Portfolio of G Sai Likhitha Reddy — Full-Stack Engineer at Microsoft. Front-end, APIs, services, and data models end to end." />
+  <title>G Sai Likhitha Reddy · Full-Stack Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="scanlines" aria-hidden="true"></div>
+  <!-- Progress bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- Top status bar -->
-  <header class="topbar" id="topbar">
-    <div class="topbar__left">
-      <span class="dot dot--red"></span>
-      <span class="dot dot--amber"></span>
-      <span class="dot dot--green"></span>
-      <span class="topbar__path">~/likhitha-reddy/portfolio — zsh</span>
-    </div>
-    <nav class="topbar__nav" id="navLinks">
-      <a href="#about"><span class="method method--get">GET</span> /about</a>
-      <a href="#skills"><span class="method method--get">GET</span> /stack</a>
-      <a href="#experience"><span class="method method--get">GET</span> /experience</a>
-      <a href="#projects"><span class="method method--get">GET</span> /projects</a>
-      <a href="#contact"><span class="method method--post">POST</span> /contact</a>
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo">GSLR<span>.</span></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav__cta">Contact</a>
     </nav>
-    <button class="topbar__toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- Hero terminal -->
+  <!-- Hero -->
   <section class="hero" id="home">
-    <div class="terminal">
-      <div class="terminal__bar">
-        <span class="dot dot--red"></span>
-        <span class="dot dot--amber"></span>
-        <span class="dot dot--green"></span>
-        <span class="terminal__title">bash — likhitha@microsoft</span>
+    <div class="hero__bg"></div>
+    <div class="hero__content reveal">
+      <p class="hero__eyebrow">Hi, I'm</p>
+      <h1 class="hero__title">G Sai Likhitha Reddy</h1>
+      <h2 class="hero__subtitle">
+        <span class="typed" id="typed"></span><span class="cursor">|</span>
+      </h2>
+      <p class="hero__desc">
+        Full-stack engineer at <strong>Microsoft</strong>, building end to end — from
+        polished React front-ends down to the APIs, services, and data models that power
+        them. NIT Durgapur CSE graduate who loves clean architecture and reliable systems.
+      </p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">View my work</a>
+        <a href="#contact" class="btn btn--ghost">Get in touch</a>
       </div>
-      <div class="terminal__body" id="termBody">
-        <p class="line"><span class="prompt">likhitha@microsoft</span><span class="tick">:</span><span class="cwd">~</span><span class="sigil">$</span> <span class="cmd">whoami</span></p>
-        <p class="line out">G Sai Likhitha Reddy — Backend &amp; Cloud Software Developer</p>
-        <p class="line"><span class="prompt">likhitha@microsoft</span><span class="tick">:</span><span class="cwd">~</span><span class="sigil">$</span> <span class="cmd">curl -s https://api.likhitha.dev/me | jq</span></p>
-        <pre class="json">{
-  <span class="k">"name"</span>: <span class="s">"G Sai Likhitha Reddy"</span>,
-  <span class="k">"role"</span>: <span class="s">"Software Developer @ Microsoft"</span>,
-  <span class="k">"team"</span>: <span class="s">"OneSOC · Microsoft Threat Protection"</span>,
-  <span class="k">"focus"</span>: [<span class="s">"backend"</span>, <span class="s">"kubernetes"</span>, <span class="s">"distributed-systems"</span>, <span class="s">"observability"</span>],
-  <span class="k">"location"</span>: <span class="s">"Hyderabad, India"</span>,
-  <span class="k">"status"</span>: <span class="s">"200 OK"</span>
-}</pre>
-        <p class="line"><span class="prompt">likhitha@microsoft</span><span class="tick">:</span><span class="cwd">~</span><span class="sigil">$</span> <span class="cmd" id="typedCmd"></span><span class="cursor">▋</span></p>
+      <div class="hero__socials">
+        <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/likhitha-reddy" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://leetcode.com/likhitha-reddy" target="_blank" rel="noopener" aria-label="LeetCode">LeetCode</a>
       </div>
     </div>
-    <div class="hero__actions">
-      <a href="#projects" class="btn btn--primary">./view_projects.sh</a>
-      <a href="#contact" class="btn btn--ghost">./contact_me.sh</a>
-    </div>
-    <div class="hero__socials">
-      <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener">git:GitHub</a>
-      <a href="https://www.linkedin.com/in/likhitha-reddy" target="_blank" rel="noopener">net:LinkedIn</a>
-      <a href="https://leetcode.com/likhitha-reddy" target="_blank" rel="noopener">algo:LeetCode</a>
-    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">
+      <span></span>
+    </a>
   </section>
 
   <!-- About -->
   <section class="section" id="about">
-    <div class="endpoint reveal">
-      <span class="method method--get">GET</span>
-      <span class="route">/api/about</span>
-      <span class="status status--200">200 OK</span>
-      <span class="latency">42ms</span>
+    <div class="section__head reveal">
+      <span class="section__num">01</span>
+      <h2 class="section__title">About me</h2>
     </div>
-    <div class="panel reveal">
-      <div class="panel__bar"><span>response · text/markdown</span><span class="panel__meta">Content-Length: dynamic</span></div>
-      <div class="panel__body about">
-        <div class="about__text">
-          <p>
-            Backend-leaning software developer on <strong>Microsoft Threat Protection (OneSOC)</strong>,
-            working on the services that keep large-scale, Azure-hosted security workloads
-            deploying safely and running reliably.
-          </p>
-          <p>
-            I live close to the infrastructure: <strong>APIs and backend services</strong>,
-            Kubernetes and container platforms, CI/CD rollout pipelines, distributed tracing,
-            and increasingly <strong>LLM tool-use / agent backends</strong>. I've remediated
-            100+ security findings, redesigned a rollout pipeline to be fully dynamic across
-            all production clusters, and co-built an AI assistant that queries live cluster
-            state over KQL.
-          </p>
-          <p>
-            Before Microsoft I interned at <strong>Amazon</strong>, replacing hundreds of hours
-            of manual operations with self-serve internal tooling. I like systems that are
-            observable, automated, and boring to operate.
-          </p>
-        </div>
-        <div class="about__facts">
-          <div class="fact"><span class="fact__num">8.72</span><span class="fact__label">GPA · B.Tech CSE, NIT Durgapur</span></div>
-          <div class="fact"><span class="fact__num">100+</span><span class="fact__label">security findings remediated</span></div>
-          <div class="fact"><span class="fact__num">99.9%</span><span class="fact__label">boring, reliable deploys (aspirational)</span></div>
-          <div class="fact"><span class="fact__num">3</span><span class="fact__label">roles · Microsoft &amp; Amazon</span></div>
-        </div>
+    <div class="about reveal">
+      <div class="about__text">
+        <p>
+          I'm a <strong>full-stack engineer</strong> at Microsoft Threat Protection
+          (OneSOC), where I build and operate the services that keep large-scale,
+          Azure-hosted security workloads deploying safely and running reliably.
+        </p>
+        <p>
+          I'm happiest designing <strong>APIs, services, and data models</strong> — then
+          wiring them all the way up to a clean UI. My work spans backend development,
+          CI/CD pipelines, observability, and increasingly <strong>LLM tool-use and agent
+          design</strong>. I've remediated 100+ security findings, redesigned rollout
+          pipelines to be fully dynamic, and co-built an AI assistant that answers
+          questions from live system data.
+        </p>
+        <p>
+          Before Microsoft, I interned at <strong>Amazon</strong> and built automation
+          that turned hundreds of hours of manual work into minutes. I enjoy the whole
+          stack — from a React front-end down to the query powering it.
+        </p>
+      </div>
+      <div class="about__facts">
+        <div class="fact"><span class="fact__num">8.72</span><span class="fact__label">GPA · B.Tech CSE, NIT Durgapur</span></div>
+        <div class="fact"><span class="fact__num">100+</span><span class="fact__label">Security findings remediated</span></div>
+        <div class="fact"><span class="fact__num">3</span><span class="fact__label">Roles across Microsoft &amp; Amazon</span></div>
+        <div class="fact"><span class="fact__num">4+</span><span class="fact__label">Full-stack &amp; ML projects shipped</span></div>
       </div>
     </div>
   </section>
 
   <!-- Skills -->
   <section class="section" id="skills">
-    <div class="endpoint reveal">
-      <span class="method method--get">GET</span>
-      <span class="route">/api/stack</span>
-      <span class="status status--200">200 OK</span>
-      <span class="latency">18ms</span>
+    <div class="section__head reveal">
+      <span class="section__num">02</span>
+      <h2 class="section__title">Skills &amp; tools</h2>
     </div>
-    <div class="panel reveal">
-      <div class="panel__bar"><span>response · application/json</span><span class="panel__meta">7 groups</span></div>
-      <div class="panel__body">
-        <pre class="stack-json">{
-  <span class="k">"languages"</span>:      [<span class="s">"Python"</span>, <span class="s">"Java"</span>, <span class="s">"JavaScript"</span>, <span class="s">"TypeScript"</span>, <span class="s">"SQL"</span>, <span class="s">"C++"</span>, <span class="s">"PowerShell"</span>],
-  <span class="k">"web_and_api"</span>:    [<span class="s">"FastAPI"</span>, <span class="s">"Flask"</span>, <span class="s">"Django"</span>, <span class="s">"Node.js"</span>, <span class="s">"Express"</span>, <span class="s">"REST APIs"</span>, <span class="s">"Next.js"</span>, <span class="s">"React"</span>, <span class="s">"Tailwind"</span>, <span class="s">"Stripe"</span>],
-  <span class="k">"cloud_infra"</span>:    [<span class="s">"Azure"</span>, <span class="s">"Kubernetes"</span>, <span class="s">"Docker"</span>, <span class="s">"AKS"</span>, <span class="s">"Azure Container Registry"</span>, <span class="s">"ARM Templates"</span>, <span class="s">"Azure Functions"</span>, <span class="s">"CI/CD"</span>],
-  <span class="k">"observability"</span>:  [<span class="s">"Azure DevOps"</span>, <span class="s">"Grafana"</span>, <span class="s">"OpenTelemetry"</span>, <span class="s">"Distributed Tracing"</span>, <span class="s">"Alerting"</span>, <span class="s">"Git"</span>, <span class="s">"Postman"</span>, <span class="s">"Linux"</span>],
-  <span class="k">"ai_llm"</span>:         [<span class="s">"LLM Tool-Use"</span>, <span class="s">"Agent Design"</span>, <span class="s">"MCP"</span>, <span class="s">"Prompt Engineering"</span>, <span class="s">"RAG"</span>],
-  <span class="k">"databases"</span>:      [<span class="s">"PostgreSQL"</span>, <span class="s">"MySQL"</span>, <span class="s">"MongoDB"</span>, <span class="s">"Redis"</span>, <span class="s">"Azure Data Explorer (Kusto/KQL)"</span>],
-  <span class="k">"data_ml"</span>:        [<span class="s">"Pandas"</span>, <span class="s">"NumPy"</span>, <span class="s">"Scikit-learn"</span>, <span class="s">"Logistic Regression"</span>, <span class="s">"AUC/Gini/KS"</span>, <span class="s">"Cosine Similarity"</span>, <span class="s">"k-NN"</span>]
-}</pre>
-      </div>
+    <div class="skills">
+      <article class="skill-card reveal">
+        <h3>Languages</h3>
+        <div class="tags">
+          <span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span>
+          <span>SQL</span><span>C++</span><span>PowerShell</span>
+        </div>
+      </article>
+      <article class="skill-card reveal">
+        <h3>Web &amp; API</h3>
+        <div class="tags">
+          <span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span>
+          <span>Flask</span><span>Django</span><span>FastAPI</span><span>REST APIs</span>
+          <span>Tailwind CSS</span><span>Material UI</span><span>Stripe</span>
+        </div>
+      </article>
+      <article class="skill-card reveal">
+        <h3>Cloud &amp; Infra</h3>
+        <div class="tags">
+          <span>Microsoft Azure</span><span>Kubernetes</span><span>Docker</span><span>AKS</span>
+          <span>Azure Container Registry</span><span>ARM Templates</span>
+          <span>Azure Functions</span><span>CI/CD</span>
+        </div>
+      </article>
+      <article class="skill-card reveal">
+        <h3>Observability &amp; DevOps</h3>
+        <div class="tags">
+          <span>Azure DevOps</span><span>Grafana</span><span>OpenTelemetry</span>
+          <span>Distributed Tracing</span><span>Alerting</span><span>Git</span>
+          <span>Postman</span><span>Linux</span>
+        </div>
+      </article>
+      <article class="skill-card reveal">
+        <h3>AI &amp; LLM Engineering</h3>
+        <div class="tags">
+          <span>LLM Tool-Use</span><span>Agent Design</span>
+          <span>Model Context Protocol (MCP)</span><span>Prompt Engineering</span>
+          <span>RAG</span>
+        </div>
+      </article>
+      <article class="skill-card reveal">
+        <h3>Databases</h3>
+        <div class="tags">
+          <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span>
+          <span>Azure Data Explorer (Kusto / KQL)</span>
+        </div>
+      </article>
+      <article class="skill-card reveal">
+        <h3>Data &amp; ML</h3>
+        <div class="tags">
+          <span>Pandas</span><span>NumPy</span><span>Scikit-learn</span>
+          <span>Feature Engineering</span><span>Logistic Regression</span>
+          <span>Credit Scoring</span><span>AUC / Gini / KS</span>
+          <span>Cosine Similarity</span><span>k-NN</span>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- Experience -->
   <section class="section" id="experience">
-    <div class="endpoint reveal">
-      <span class="method method--get">GET</span>
-      <span class="route">/api/experience</span>
-      <span class="status status--200">200 OK</span>
-      <span class="latency">27ms</span>
+    <div class="section__head reveal">
+      <span class="section__num">03</span>
+      <h2 class="section__title">Experience</h2>
     </div>
+    <div class="timeline">
+      <article class="tl-item reveal">
+        <div class="tl-item__dot"></div>
+        <div class="tl-item__body">
+          <div class="tl-item__head">
+            <h3>Software Developer · <span>Microsoft</span></h3>
+            <span class="tl-item__date">Jun 2025 – Present</span>
+          </div>
+          <p class="tl-item__meta">OneSOC, Microsoft Threat Protection · Hyderabad, India</p>
+          <ul>
+            <li>Redesigned the deployment health validation rollout pipeline to be fully dynamic, covering all production clusters without per-environment setup.</li>
+            <li>Supported a cross-team migration of data-science workloads onto the shared Kubernetes deployment platform, resolving compatibility and onboarding issues.</li>
+            <li>Remediated <strong>100+ security findings</strong> — access-control misconfigurations, insecure defaults, and dependency vulnerabilities — and ran privacy reviews.</li>
+            <li>Integrated distributed tracing, structured alerts, and Grafana dashboards, reducing mean time-to-detect for production incidents.</li>
+            <li>Diagnosed production image-pull outages across Kubernetes and container-registry configurations to restore service availability.</li>
+            <li><strong>Hackathon:</strong> co-built an AI assistant for infra engineers — contributed the live cluster event-log (KQL) module, Azure DevOps repo-browsing integration, and docs retrieval. Adopted by the wider team. <em>C#, .NET, MCP, KQL, LLM tool-use.</em></li>
+          </ul>
+        </div>
+      </article>
 
-    <div class="log reveal">
-      <div class="log__head">
-        <span class="log__level log__level--info">INFO</span>
-        <span class="log__svc">svc=microsoft.onesoc</span>
-        <span class="log__role">Software Developer</span>
-        <span class="log__time">Jun 2025 → present</span>
-      </div>
-      <p class="log__meta">OneSOC, Microsoft Threat Protection · Hyderabad, India</p>
-      <ul class="log__lines">
-        <li>Redesigned the deployment-health validation rollout pipeline to be fully dynamic — covers all production clusters with no per-environment setup.</li>
-        <li>Drove a cross-team migration of data-science workloads onto the shared Kubernetes deployment platform; resolved compatibility &amp; onboarding blockers.</li>
-        <li>Remediated <strong>100+ security findings</strong>: access-control misconfigs, insecure defaults, dependency CVEs; ran privacy reviews for the Defender infra platform.</li>
-        <li>Wired up distributed tracing, structured alerts, and Grafana dashboards → lower MTTD for production incidents.</li>
-        <li>Root-caused image-pull outages across Kubernetes &amp; container-registry config to restore service availability.</li>
-        <li><strong>Hackathon:</strong> co-built an infra-engineer AI assistant — owned the live cluster event-log (KQL) module, Azure DevOps repo-browsing integration, and docs retrieval. <em>C#, .NET, MCP, KQL, LLM tool-use.</em></li>
-      </ul>
-    </div>
+      <article class="tl-item reveal">
+        <div class="tl-item__dot"></div>
+        <div class="tl-item__body">
+          <div class="tl-item__head">
+            <h3>Software Development Intern · <span>Amazon</span></h3>
+            <span class="tl-item__date">Jan 2025 – Jun 2025</span>
+          </div>
+          <p class="tl-item__meta">E-Commerce Foundation · Bangalore, India</p>
+          <ul>
+            <li>Built a self-serve Fee Utility Service that cut bulk fee-adjustment work from ~300 hours/year to under 5 minutes.</li>
+            <li>Automated correction logic for merchant reimbursement fees, contributing to a <strong>10% reduction</strong> in avoidable reimbursement costs.</li>
+            <li>Performed security and privacy reviews for internal merchant-facing services prior to production deployment.</li>
+          </ul>
+        </div>
+      </article>
 
-    <div class="log reveal">
-      <div class="log__head">
-        <span class="log__level log__level--info">INFO</span>
-        <span class="log__svc">svc=amazon.ecf</span>
-        <span class="log__role">Software Development Intern</span>
-        <span class="log__time">Jan 2025 → Jun 2025</span>
-      </div>
-      <p class="log__meta">E-Commerce Foundation · Bangalore, India</p>
-      <ul class="log__lines">
-        <li>Built a self-serve Fee Utility Service that cut bulk fee-adjustment work from <strong>~300 hrs/yr → &lt;5 min</strong>.</li>
-        <li>Automated correction logic for merchant reimbursement fees → <strong>10% reduction</strong> in avoidable reimbursement costs.</li>
-        <li>Ran security &amp; privacy reviews for internal merchant-facing services before production.</li>
-      </ul>
-    </div>
-
-    <div class="log reveal">
-      <div class="log__head">
-        <span class="log__level log__level--info">INFO</span>
-        <span class="log__svc">svc=microsoft.mtp</span>
-        <span class="log__role">Software Development Intern</span>
-        <span class="log__time">May 2024 → Jun 2024</span>
-      </div>
-      <p class="log__meta">Microsoft Threat Protection · Hyderabad, India</p>
-      <ul class="log__lines">
-        <li>Built a UI-driven solution-package generator on customizable ARM templates → turnaround <strong>10–12 days → ~2 min</strong>.</li>
-        <li>Automated validation checks &amp; merge-request acceptance in the team's internal CI/CD pipeline.</li>
-      </ul>
+      <article class="tl-item reveal">
+        <div class="tl-item__dot"></div>
+        <div class="tl-item__body">
+          <div class="tl-item__head">
+            <h3>Software Development Intern · <span>Microsoft</span></h3>
+            <span class="tl-item__date">May 2024 – Jun 2024</span>
+          </div>
+          <p class="tl-item__meta">Microsoft Threat Protection · Hyderabad, India</p>
+          <ul>
+            <li>Built a UI-driven solution-package generator using customizable ARM templates, cutting turnaround from 10–12 days to ~2 minutes.</li>
+            <li>Automated validation checks and merge-request acceptance in the team's internal CI/CD pipeline, reducing manual review overhead.</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- Projects -->
   <section class="section" id="projects">
-    <div class="endpoint reveal">
-      <span class="method method--get">GET</span>
-      <span class="route">/api/projects</span>
-      <span class="status status--200">200 OK</span>
-      <span class="latency">33ms</span>
+    <div class="section__head reveal">
+      <span class="section__num">04</span>
+      <h2 class="section__title">Projects</h2>
     </div>
     <div class="projects">
       <article class="project reveal">
         <div class="project__top">
-          <span class="project__id">projects[0]</span>
-          <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" class="project__repo">$ git clone</a>
+          <span class="project__icon">💳</span>
+          <div class="project__links">
+            <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" aria-label="GitHub repo">Code</a>
+          </div>
         </div>
-        <h3>CreditLens <span class="project__tag">AI/ML · FastAPI</span></h3>
+        <h3>CreditLens — AI/ML MSME Financial Health Card</h3>
         <p>
-          MSME credit-assessment backend aggregating consent-based alternate data
-          (GST, UPI, Account Aggregator, EPFO) into a 0–100 financial-health score with
-          grade, risk band &amp; credit-readiness verdict. Transparent six-dimension weighted
-          engine with ML-calibrated weights (AUC 0.905 → 0.907). Live <strong>FastAPI + Next.js</strong>
-          prototype, 62 passing tests, CI/CD deploy pipeline.
+          MSME credit-assessment platform aggregating consent-based alternate data
+          (GST, UPI, Account Aggregator, EPFO) into a multidimensional financial-health
+          score (0–100), mapped to grade, risk band, and credit-readiness verdict.
+          ML-calibrated weighted scoring engine (AUC 0.905 → 0.907). Live FastAPI +
+          Next.js prototype with 62 passing tests and a CI/CD pipeline.
         </p>
-        <div class="tags"><span>Python</span><span>FastAPI</span><span>NumPy</span><span>Logistic Regression</span><span>Next.js</span><span>TypeScript</span></div>
+        <div class="tags tags--sm">
+          <span>Python</span><span>FastAPI</span><span>NumPy</span>
+          <span>Logistic Regression</span><span>Next.js</span><span>TypeScript</span><span>React</span>
+        </div>
       </article>
 
       <article class="project reveal">
         <div class="project__top">
-          <span class="project__id">projects[1]</span>
-          <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" class="project__repo">$ git clone</a>
+          <span class="project__icon">🎓</span>
+          <div class="project__links">
+            <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" aria-label="GitHub repo">Code</a>
+          </div>
         </div>
-        <h3>PlacedIN <span class="project__tag">Full-stack · Node</span></h3>
+        <h3>PlacedIN</h3>
         <p>
-          Platform for sharing &amp; discovering interview and placement experiences. Auth,
-          content-moderation admin panel, category search, and community features
-          (upvotes, comments) on an <strong>Express/MongoDB</strong> backend.
+          Full-stack platform for sharing and discovering interview and placement
+          experiences. Includes user authentication, a content-moderation admin panel,
+          category-based search, and community features like upvoting and commenting.
         </p>
-        <div class="tags"><span>React</span><span>Tailwind</span><span>Express</span><span>Node.js</span><span>MongoDB</span></div>
+        <div class="tags tags--sm">
+          <span>React</span><span>Tailwind CSS</span><span>Express</span><span>Node.js</span><span>MongoDB</span>
+        </div>
       </article>
 
       <article class="project reveal">
         <div class="project__top">
-          <span class="project__id">projects[2]</span>
-          <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" class="project__repo">$ git clone</a>
+          <span class="project__icon">🛒</span>
+          <div class="project__links">
+            <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" aria-label="GitHub repo">Code</a>
+          </div>
         </div>
-        <h3>Recommendation Engine <span class="project__tag">Flipkart Grid</span></h3>
+        <h3>Recommendation Engine — Flipkart Grid</h3>
         <p>
-          Recommendation service returning the top-3 most relevant options under multiple
-          constraints. Cosine similarity, k-NN ranking, and weighted heuristic scoring across
-          price, relevance, and user-defined constraints.
+          Product recommendation engine surfacing the top-3 most relevant options under
+          multiple constraints. Combines cosine similarity, k-NN ranking, and weighted
+          heuristic scoring across price, relevance, and user-defined constraints.
         </p>
-        <div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span></div>
+        <div class="tags tags--sm">
+          <span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span>
+        </div>
       </article>
 
       <article class="project reveal">
         <div class="project__top">
-          <span class="project__id">projects[3]</span>
-          <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" class="project__repo">$ git clone</a>
+          <span class="project__icon">🎬</span>
+          <div class="project__links">
+            <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener" aria-label="GitHub repo">Code</a>
+          </div>
         </div>
-        <h3>MoviesGO <span class="project__tag">Payments · Stripe</span></h3>
+        <h3>MoviesGO</h3>
         <p>
-          Ticket-booking backend with dynamic seat-level pricing and <strong>Stripe</strong>
-          payment integration. Theatre owners manage showtimes, seat availability &amp; prices;
-          users search and book by preference.
+          End-to-end movie ticket booking app with dynamic seat-level pricing and Stripe
+          payments. Theatre owners manage showtimes, seat availability, and prices; users
+          search and book by preference.
         </p>
-        <div class="tags"><span>React</span><span>Express</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div>
+        <div class="tags tags--sm">
+          <span>React</span><span>Tailwind CSS</span><span>Express</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span>
+        </div>
       </article>
     </div>
   </section>
 
   <!-- Education -->
   <section class="section" id="education">
-    <div class="endpoint reveal">
-      <span class="method method--get">GET</span>
-      <span class="route">/api/education</span>
-      <span class="status status--200">200 OK</span>
-      <span class="latency">11ms</span>
+    <div class="section__head reveal">
+      <span class="section__num">05</span>
+      <h2 class="section__title">Education</h2>
     </div>
-    <div class="panel reveal">
-      <div class="panel__bar"><span>response · application/json</span><span class="panel__meta">3 records</span></div>
-      <div class="panel__body">
-        <pre class="stack-json">[
-  { <span class="k">"school"</span>: <span class="s">"NIT Durgapur"</span>,        <span class="k">"program"</span>: <span class="s">"B.Tech, Computer Science &amp; Engineering"</span>, <span class="k">"gpa"</span>: <span class="n">8.72</span>,   <span class="k">"years"</span>: <span class="s">"2021–2025"</span> },
-  { <span class="k">"school"</span>: <span class="s">"DAV Public School, Raniganj"</span>, <span class="k">"program"</span>: <span class="s">"Class XII (CBSE)"</span>,                    <span class="k">"score"</span>: <span class="s">"97.8%"</span>, <span class="k">"year"</span>:  <span class="s">"2021"</span> },
-  { <span class="k">"school"</span>: <span class="s">"DAV Public School, Raniganj"</span>, <span class="k">"program"</span>: <span class="s">"Class X (CBSE)"</span>,                      <span class="k">"score"</span>: <span class="s">"98.2%"</span>, <span class="k">"year"</span>:  <span class="s">"2019"</span> }
-]</pre>
-      </div>
+    <div class="edu">
+      <article class="edu-card reveal">
+        <h3>National Institute of Technology, Durgapur</h3>
+        <p class="edu-card__meta">B.Tech in Computer Science and Engineering</p>
+        <div class="edu-card__foot"><span>GPA 8.72</span><span>2021 – 2025</span></div>
+      </article>
+      <article class="edu-card reveal">
+        <h3>DAV Public School, Raniganj</h3>
+        <p class="edu-card__meta">Class XII (CBSE)</p>
+        <div class="edu-card__foot"><span>97.8%</span><span>2021</span></div>
+      </article>
+      <article class="edu-card reveal">
+        <h3>DAV Public School, Raniganj</h3>
+        <p class="edu-card__meta">Class X (CBSE)</p>
+        <div class="edu-card__foot"><span>98.2%</span><span>2019</span></div>
+      </article>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="endpoint reveal">
-      <span class="method method--post">POST</span>
-      <span class="route">/api/contact</span>
-      <span class="status status--201">201 Created</span>
-    </div>
-    <div class="panel reveal">
-      <div class="panel__bar"><span>request · application/json</span><span class="panel__meta">let's talk backend</span></div>
-      <div class="panel__body contact">
-        <pre class="stack-json">$ curl -X POST https://api.likhitha.dev/contact \
-    -H <span class="s">"Content-Type: application/json"</span> \
-    -d '{ <span class="k">"from"</span>: <span class="s">"you"</span>, <span class="k">"intent"</span>: <span class="s">"let's build something"</span> }'</pre>
-        <p class="contact__desc">Open to backend, platform, and infra problems — and good conversations. Fastest response is email.</p>
-        <a href="mailto:likhitha0341@gmail.com" class="btn btn--primary btn--lg">likhitha0341@gmail.com</a>
-        <div class="contact__socials">
-          <a href="tel:+918617868717">+91 86178 68717</a>
-          <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/likhitha-reddy" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://leetcode.com/likhitha-reddy" target="_blank" rel="noopener">LeetCode</a>
-        </div>
+  <section class="section section--contact" id="contact">
+    <div class="contact reveal">
+      <span class="section__num">06</span>
+      <h2 class="contact__title">Let's build something together</h2>
+      <p class="contact__desc">
+        I'm always open to interesting problems, collaborations, and conversations.
+        The fastest way to reach me is email.
+      </p>
+      <a href="mailto:likhitha0341@gmail.com" class="btn btn--primary btn--lg">likhitha0341@gmail.com</a>
+      <div class="contact__socials">
+        <a href="tel:+918617868717">+91 86178 68717</a>
+        <a href="https://github.com/likhitha-reddy" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/likhitha-reddy" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://leetcode.com/likhitha-reddy" target="_blank" rel="noopener">LeetCode</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <p><span class="prompt">likhitha@microsoft</span><span class="sigil">$</span> exit &nbsp;·&nbsp; © <span id="year"></span> G Sai Likhitha Reddy &nbsp;·&nbsp; built with HTML + CSS + JS, no framework</p>
+    <p>© <span id="year"></span> G Sai Likhitha Reddy · Built with HTML, CSS &amp; a bit of JavaScript.</p>
   </footer>
 
   <script src="script.js"></script>
