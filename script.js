@@ -79,3 +79,12 @@ function type() {
   setTimeout(type, delay);
 }
 type();
+
+// ===== Pointer glow on skill cards =====
+document.querySelectorAll(".skill-card").forEach((card) => {
+  card.addEventListener("pointermove", (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    card.style.setProperty("--my", `${e.clientY - r.top}px`);
+  });
+});
