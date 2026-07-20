@@ -334,7 +334,27 @@
         Up for impactful work, a quick chat, or just a coffee and a good conversation?
         DM me or drop a line.
       </p>
-      <a href="mailto:likhitha0341@gmail.com" class="btn btn--primary btn--lg">likhitha0341@gmail.com</a>
+      <form class="contact__form" id="contactForm" action="https://formsubmit.co/likhitha0341@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from your portfolio" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <div class="contact__row">
+          <label class="field">
+            <span>Your name</span>
+            <input type="text" name="name" placeholder="Jane Doe" required />
+          </label>
+          <label class="field">
+            <span>Your email</span>
+            <input type="email" name="email" placeholder="jane@example.com" required />
+          </label>
+        </div>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" rows="5" placeholder="Tell me a bit about what you have in mind…" required></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary btn--lg">Send message</button>
+      </form>
+      <p class="contact__or">or reach me directly</p>
       <div class="contact__socials">
         <a href="mailto:likhitha0341@gmail.com">likhitha0341@gmail.com</a>
         <a href="tel:+918617868717">+91 86178 68717</a>
