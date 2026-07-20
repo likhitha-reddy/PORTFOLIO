@@ -48,9 +48,9 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 // ===== Typing effect =====
 const phrases = [
   "Full-Stack Engineer @ Microsoft",
-  "Front-End → API → Database",
-  "React · Node · FastAPI",
-  "I build the whole stack",
+  "I solve real-world problems",
+  "Building with AI agents",
+  "Focused on real impact",
 ];
 const typedEl = document.getElementById("typed");
 let phraseIndex = 0;
