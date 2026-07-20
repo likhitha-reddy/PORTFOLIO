@@ -88,3 +88,29 @@ document.querySelectorAll(".skill-card").forEach((card) => {
     card.style.setProperty("--my", `${e.clientY - r.top}px`);
   });
 });
+
+// ===== Contact form -> opens visitor's email client (mailto) =====
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!contactForm.reportValidity()) return;
+
+    const name = contactForm.elements.name.value.trim();
+    const email = contactForm.elements.email.value.trim();
+    const message = contactForm.elements.message.value.trim();
+
+    const subject = `Portfolio enquiry from ${name}`;
+    const body =
+      `${message}\n\n` +
+      `—\nName: ${name}\nEmail: ${email}`;
+
+    const mailto =
+      `mailto:likhitha0341@gmail.com` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+  });
+}
+
